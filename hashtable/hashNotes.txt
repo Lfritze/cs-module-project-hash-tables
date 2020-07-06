@@ -1,0 +1,3 @@
+Hashtable.py Notes
+
+1. First, we need to initialize a list with 8 empty slots:
