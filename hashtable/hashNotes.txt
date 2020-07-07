@@ -1,3 +1,15 @@
 Hashtable.py Notes
 
 1. First, we need to initialize a list with 8 empty slots:
+
+ def __init__(self, capacity):
+self.capacity = [None] * MIN_CAPACITY
+
+________________________________________
+2. Implement a good hashing function.
+  * FNV-1 (64-bit)
+
+https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
+
+64 bit - FNV Prime 1099511628211
+FNV offset basis - 14695981039346656037
