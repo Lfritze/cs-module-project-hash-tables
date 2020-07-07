@@ -83,8 +83,8 @@ class HashTable:
         Take an arbitrary key and return a valid integer index
         between within the storage capacity of the hash table.
         """
-        #return self.fnv1(key) % self.capacity
-        return self.djb2(key) % self.capacity
+        return self.fnv1(key) % len(self.capacity)
+        # return self.djb2(key) % self.capacity
 
     def put(self, key, value):
         """
@@ -95,6 +95,10 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        slot = self.hash_index(key)
+        val_entry = HashTableEntry(key, value)
+        self.capacity[slot] = val_entry
+
 
 
     def delete(self, key):
@@ -106,6 +110,7 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        self.put(key, None)
 
 
     def get(self, key):
@@ -117,6 +122,12 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        slot = self.hash_index(key)
+        val_entry = self.capacity[slot]
+
+        if val_entry:
+            return val_entry.value
+        return None
 
 
     def resize(self, new_capacity):
