@@ -36,7 +36,7 @@ class HashTable:
         Implement this.
         """
         # Your code here
-
+        
 
     def get_load_factor(self):
         """
@@ -53,9 +53,17 @@ class HashTable:
 
         Implement this, and/or DJB2.
         """
-
         # Your code here
+        seeder = 0
+        FNVPrime = 1099511628211
+        offsetBasis = 14695981039346656037
 
+        hasher = offsetBasis + seeder
+
+        for x in key:
+            hasher = hasher * FNVPrime
+            hasher = hasher ^ ord(x)
+        return hasher
 
     def djb2(self, key):
         """
@@ -64,7 +72,11 @@ class HashTable:
         Implement this, and/or FNV-1.
         """
         # Your code here
+        hasher = 5381
 
+        for x in key:
+            hasher = (( hasher << 5) + hasher) + ord(x)
+        return hasher & 0xFFFFFFFF
 
     def hash_index(self, key):
         """

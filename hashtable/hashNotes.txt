@@ -1,4 +1,5 @@
-Hashtable.py Notes
+
+***** Hashtable.py Notes *****
 
 1. First, we need to initialize a list with 8 empty slots:
 
@@ -13,3 +14,23 @@ https://en.wikipedia.org/wiki/Fowler%E2%80%93Noll%E2%80%93Vo_hash_function
 
 64 bit - FNV Prime 1099511628211
 FNV offset basis - 14695981039346656037
+
+seeder = 0
+
+hasher = offset basis + seeder
+
+for x in key
+  hasher = hasher * FNV Prime
+  hasher = hasher ^ ord
+
+  # The ord() function returns an integer representing the Unicode character.
+
+  ______________________________________
+  OR...djb2
+
+  reason for 5381 
+  https://stackoverflow.com/questions/10696223/reason-for-5381-number-in-djb-hash-function
+
+more notes...
+  https://gist.github.com/mengzhuo/180cd6be8ba9e2743753
+
