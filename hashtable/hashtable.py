@@ -84,7 +84,7 @@ class HashTable:
         between within the storage capacity of the hash table.
         """
         return self.fnv1(key) % len(self.capacity)
-        # return self.djb2(key) % self.capacity
+        # return self.djb2(key) % len(self.capacity)
 
     def put(self, key, value):
         """
@@ -96,8 +96,8 @@ class HashTable:
         """
         # Your code here
         slot = self.hash_index(key)
-        val_entry = HashTableEntry(key, value)
-        self.capacity[slot] = val_entry
+        inputValue = HashTableEntry(key, value)
+        self.capacity[slot] = inputValue
 
 
 
@@ -123,10 +123,10 @@ class HashTable:
         """
         # Your code here
         slot = self.hash_index(key)
-        val_entry = self.capacity[slot]
+        inputValue = self.capacity[slot]
 
-        if val_entry:
-            return val_entry.value
+        if inputValue:
+            return inputValue.value
         return None
 
 
