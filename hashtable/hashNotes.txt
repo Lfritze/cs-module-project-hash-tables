@@ -34,3 +34,77 @@ for x in key
 more notes...
   https://gist.github.com/mengzhuo/180cd6be8ba9e2743753
 
+
+
+class Node:
+  def __init__(self, value):
+    self.value = value
+    self.next = next
+
+  # def __repr__(self):
+  #   return f'Node({repr(self.value)})'
+
+class LinkedList:
+  def __init__(self):
+    self.head = None
+
+  # def __str__(self):
+  #   x = ""
+  #   current = self.head
+
+  #   while current is not None:
+  #     x += f'({current.value})'
+  #     if current.next is not None:
+  #       x += ' -> '
+  #     current = current.next
+  #   return x
+
+# Note insert at head is quicker than insert at tail - dont's have to traverse from head
+  def insert_at_head(self, node):
+    node.next = self.head
+    self.head = node
+
+  def find(self, value):
+    current = self.head
+    # Traverse List
+    while current is not None:
+      if current.value == value:
+        # Then you found it
+        return current
+      current = current.next
+    return None
+
+  def delete(self, value):
+    current = self.head
+    if current is None:
+      return None
+    # To delete the head of list (special case)
+    if current.value == value:
+      self.head = self.head.next
+      return current
+
+    # General cases
+    previous = current
+    current = current.next
+
+    while current is not None:
+      if current.value == value: # Delete it
+        previous.next = current.next # cuts out old node 
+        return current
+      else:
+        previous = previous.next
+        current = current.next
+    return None # if we got nothing then it was found
+
+    
+    """
+    NOTES
+
+    The official Python documentation says __repr__() is used to compute the “official” string representation of an object. The repr() built-in function uses __repr__() to display the object. __repr__()  returns a printable representation of the object, one of the ways possible to create this object.  __repr__() is more useful for developers while __str__() is for end users.
+
+
+Also the linked list works by way of key value pair
+    """
+
+
+       The official Python documentation says __repr__() is used to compute the “official” string representation of an object. The repr() built-in function uses __repr__() to display the object. __repr__()  returns a printable representation of the object, one of the ways possible to create this object.  __repr__() is more useful for developers while __str__() is for end users.
