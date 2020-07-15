@@ -1,0 +1,17 @@
+Items: .vgrzf() zrgubq ba n qvpgvbanel zvtug or hfrshy.
+
+Sorting: vg'f cbffvoyr sbe .fbeg() gb fbeg ba zhygvcyr xrlf ng bapr.
+
+Sorting: artngvirf zvtug uryc jurer erirefr jba'g.
+
+Printing: lbh pna cevag n inevnoyr svryq jvqgu va na s-fgevat jvgu arfgrq oenprf, yvxr fb {k:{l}}
+
+
+
+Vgrzf: .items() method on a dictionary might be useful.
+
+Fbegvat: it's possible for .sort() to sort on multiple keys at once.
+
+Fbegvat: negatives might help where reverse won't.
+
+Cevagvat: you can print a variable field width in an f-string with nested braces, like so {x:{y}}
