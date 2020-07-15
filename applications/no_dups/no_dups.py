@@ -1,6 +1,17 @@
 def no_dups(s):
     # Your code here
+    dupe = {}
+    stringer= ""
 
+    for (i, word) in enumerate (s.split()):
+        word = word.lower()
+        if word not in dupe:
+            if i == 0:
+                stringer += word
+            else:
+                stringer += " " + word
+        dupe[word] = word
+    return stringer
 
 
 if __name__ == "__main__":
